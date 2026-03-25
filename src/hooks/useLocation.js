@@ -33,4 +33,3 @@ export function useLocation() {
 
   return { location, error, loading };
 }
-//Done
