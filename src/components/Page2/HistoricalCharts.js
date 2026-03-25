@@ -4,7 +4,7 @@ import {
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
 import ScrollableChart from '../common/ScrollableChart';
-import { windDirectionLabel, toIST } from '../../services/weatherApi';
+import { windDirectionLabel } from '../../services/weatherApi';
 import dayjs from 'dayjs';
 import styles from './HistoricalCharts.module.css';
 
