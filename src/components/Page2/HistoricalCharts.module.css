@@ -1,0 +1,20 @@
+.chartList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  max-width: 200px;
+}
+
+.tooltipLabel {
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
