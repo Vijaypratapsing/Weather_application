@@ -9,12 +9,12 @@ import styles from './Page2.module.css';
 
 export default function Page2({ location }) {
   const today = dayjs();
-  const defaultEnd = today.format('YYYY-MM-DD');
-  const defaultStart = today.subtract(30, 'day').format('YYYY-MM-DD');
+  const defaultEnd = today.subtract(1, 'day').format('YYYY-MM-DD'); // End date = kal
+  const defaultStart = today.subtract(30, 'day').format('YYYY-MM-DD'); // Start date = 30 din pehle
 
   const [startDate, setStartDate] = useState(new Date(defaultStart));
-  const [endDate,   setEndDate]   = useState(new Date(defaultEnd));
-  const [applied,   setApplied]   = useState({ start: defaultStart, end: defaultEnd });
+  const [endDate, setEndDate] = useState(new Date(defaultEnd));
+  const [applied, setApplied] = useState({ start: defaultStart, end: defaultEnd });
 
   const maxRange = 2 * 365; // days
   const minDate = new Date();
@@ -107,7 +107,11 @@ export default function Page2({ location }) {
               startDate={startDate}
               endDate={endDate}
               minDate={startDate || minDate}
-              maxDate={maxDate}
+              maxDate={(() => {
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                return yesterday;
+              })()}
               dateFormat="MMM d, yyyy"
             />
           </div>
