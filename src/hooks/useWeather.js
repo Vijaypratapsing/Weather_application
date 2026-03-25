@@ -62,3 +62,4 @@ export function useRangeWeather(lat, lon, startDate, endDate) {
 
   return { data, loading, error, reload: load };
 }
+//Done
